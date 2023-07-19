@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "categoria": "feminino",
+        "nome": "Camisa Xadrez Rosa e Preto",
+        "preco": 139.90
+    },
+    {
+        "id": 2,
+        "categoria": "feminino",
+        "nome": "Camisa Xadrez Branco e Preto",
+        "preco": 218.80
+    },
+    {
+        "id": 3,
+        "categoria": "feminino",
+        "nome": "Regata Milene Branca",
+        "preco": 89.90
+    },
+    {
+        "id": 4,
+        "categoria": "feminino",
+        "nome": "Blusa Alice - OffWhite",
+        "preco": 115.50
+    },
+    {
+        "id": 5,
+        "categoria": "feminino",
+        "nome": "Blusa Bárbara Animal Print",
+        "preco": 118.50
+    },
+    {
+        "id": 6,
+        "categoria": "feminino",
+        "nome": "Blusa Elisa - Preta",
+        "preco": 158.50
+    },
+    {
+        "id": 7,
+        "categoria": "infantil",
+        "nome": "Blusa Desenho - Rosa",
+        "preco": 58.50
+    },
+    {
+        "id": 8,
+        "categoria": "infantil",
+        "nome": "Camiseta Infantil Desenho Sonic",
+        "preco": 88.90
+    },
+    {
+        "id": 9,
+        "categoria": "infantil",
+        "nome": "Vestido Xadrez Vermelho",
+        "preco": 258.50
+    },
+    {
+        "id": 10,
+        "categoria": "infantil",
+        "nome": "Camiseta Infantil Desenho Dinossauro",
+        "preco": 88.90
+    },
+    {
+        "id": 11,
+        "categoria": "infantil",
+        "nome": "Agasalho Desenho",
+        "preco": 148.50
+    },
+    {
+        "id": 12,
+        "categoria": "infantil",
+        "nome": "Vestido Animal Print",
+        "preco": 258.50
+    },
+    {
+        "id": 13,
+        "categoria": "masculino",
+        "nome": "Camisa Xadrez Cinza",
+        "preco": 158.50
+    },
+    {
+        "id": 14,
+        "categoria": "masculino",
+        "nome": "Camisa de Gola",
+        "preco": 158.50
+    },
+    {
+        "id": 15,
+        "categoria": "masculino",
+        "nome": "Camisa Dezenho Animado",
+        "preco": 188.50
+    },
+    {
+        "id": 16,
+        "categoria": "masculino",
+        "nome": "Camisa Polo Cinza",
+        "preco": 158.50
+    },
+    {
+        "id": 17,
+        "categoria": "masculino",
+        "nome": "Camisa Floral",
+        "preco": 158.50
+    },
+    {
+        "id": 18,
+        "categoria": "masculino",
+        "nome": "Camiseta Bege",
+        "preco": 238.50
+    }
+]
+

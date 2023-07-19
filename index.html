@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Gisely Oliveira">
+      <title>FastTrack - Compra de roupinhas</title>
+
+      <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+ 
+      <style>
+        div.album{
+          padding-top: 8rem!important;
+        }
+      .frete-gratis {
+          position: fixed;
+          top: 56px!important;
+      }
+      </style>
+    
+     
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Loja Virtual</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a id="menu-todos" class="nav-link link-menu active" aria-current="page" onclick="selecionarMenu(this)" href="#">Todos os produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'feminino')">Feminino</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'infantil')">Infantil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'masculino')">Masculino</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button type="button" class="d-flex me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-carrinho">
+              Ver Carrinho
+              <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
+            </button>
+          </div>
+          <form class="d-flex" role="search" onsubmit="pesquisarProduto(this)">
+            <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Search">
+            <button class="btn btn-success" type="submit">Pesquisar</button>
+           </form>
+        </div>
+      </div>
+    </nav>
+
+  <main>
+    <div class="row">
+      <div class="container">
+        <div class="col">
+          <div class="frete-gratis">
+            <img class="" src="assets/images/barrasuperior.gif" width="102%" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="produtos"> </div>
+      </div>
+    </div>
+
+  </main>
+  <footer class="text-body-secondary py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">2023 &copy Loja on Line</p>
+      
+    </div>
+  </footer>
+  
+  <!-- Modal -->
+  <div class="modal modal-lg" tabindex="-1" id="modal-carrinho">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Carrinho de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Resumo do Compra</p>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="produtos-carrinho"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar comprando</button>
+          <button type="button" class="btn btn-primary">Compre Agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/produtos.js"></script>
+</body>
+</html>
