@@ -50,7 +50,7 @@
               <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
             </button>
           </div>
-          <form class="d-flex" role="search" onsubmit="pesquisarProduto(this)">
+          <form class="d-flex" role="search" onsubmit="pesquisarProduto(this); return false">
             <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Search">
             <button class="btn btn-success" type="submit">Pesquisar</button>
            </form>
