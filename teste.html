@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gisely Oliveira">
+
+    <title>FastTrack - Compra de roupinhas</title>
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+    <!-- Barra de Navegação Principal -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <div class="container-fluid">
+
+            <!-- Nome da Loja -->
+            <img src="assets/images/logo.png" ; width="200" alt="Logo da Loja">
+            <a class="navbar-brand" href="#">A sua Loja Virtual</a>
+            <!-- Ícones de Bootstrap -->
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+
+                <!-- Ícone de Carrinho de Compras -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-carrinho">
+                        <i class="bi bi-cart-fill ms-1"></i>
+                        <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
+                    </a>
+
+                    <!-- Ícone de Usuário -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-person icon-lg"></i>
+                    </a>
+                </li>
+                </a>
+                </li>
+                <!-- Ícone de Atendimento ao Cliente -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-headset"></i>
+                    </a>
+                </li>
+                <!-- Ícone de Login -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </a>
+                </li>
+
+
+                </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Barra de Navegação Secundária com Itens -->
+    <nav class="navbar navbar-secondary navbar-expand-md navbar-light bg-secondary">
+        <div class="container-fluid">
+
+            <!-- Itens do menu secundário -->
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <!-- Todos os Produtos -->
+                <li class="nav-item">
+                    <a id="menu-todos" class="nav-link link-menu active" aria-current="page"
+                        onclick="selecionarMenu(this)" href="#">Todos os produtos</a>
+                </li>
+
+                <!-- Categorias -->
+                <li class="nav-item">
+                    <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'feminino')">Feminino</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'infantil')">Infantil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'masculino')">Masculino</a>
+                </li>
+            </ul>
+
+            <!-- Barra de Pesquisa -->
+            <form class="d-flex" role="search" onsubmit="pesquisarProduto(this); return false">
+                <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui"
+                    aria-label="Search">
+                <button class="btn btn-success" type="submit">Pesquisar</button>
+            </form>
+
+        </div>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div class="container">
+                <div class="col">
+                    <div class="frete-gratis">
+                        <img class="d-none d-md-block d-lg-block d-xl-block" src="assets/images/barrasuperior.gif"
+                            width="100%" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="produtos"> </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- Rodapé -->
+
+    <footer id="footer">
+        <div class="footer-content">
+            <!-- Footer Menu - Ajuda e Suporte -->
+            <ul class="list-unstyled footer-info-items">
+                <p class="footer-menu-heading">Ajuda e Suporte</p>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Política de Frete
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Devoluções
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Rastrear
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Guia de Tamanhos
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Footer Menu - Atendimento ao Cliente -->
+            <ul class="list-unstyled footer-info-items">
+                <p class="footer-menu-heading">
+                    Atendimento ao Cliente
+                </p>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Contate-nos
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Método de Pagamento
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Bonificação
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Footer Menu - Privacidade -->
+            <ul class="list-unstyled footer-info-items">
+                <p class="footer-menu-heading">Privacidade</p>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Política
+                        de Privacidade
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Cookies
+                    </a>
+                </li>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Sobre Anúncios
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <div class="footer-left">
+                <p class="float-end mb-1">©2009-2023 Todos os direitos reservados - Loja on Line</p>
+                <div class="footer-info">
+                    <ul class="footer-info-items footer-menu">
+
+                    </ul>
+                </div>
+            </div>
+            <p class="float-end mb-1"><a href="#">Back to top</a></p>
+        </div>
+    </footer>
+
+    <!-- Modal Carrinho de Compras -->
+    <div class="modal modal-lg" tabindex="-1" id="modal-carrinho">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrinho de compras</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Resumo da Compra</p>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="produtos-carrinho"></div>
+                    <div class="total-carrinho">
+                        <p>Total: R$ <span id="valor-total-carrinho">0.00</span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar comprando</button>
+                    <button type="button" class="btn btn-primary">Compre Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/produtos.js"></script>
+    <script>
+        window.setTimeout(buscaProdutos, 1000); // Aguarda 1 segundo para buscar produtos
+        carregarCarrinho(); // Carrega o carrinho no carregamento da página
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

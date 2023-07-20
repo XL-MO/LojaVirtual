@@ -1,69 +1,94 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="Gisely Oliveira">
-      <title>FastTrack - Compra de roupinhas</title>
 
-      <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- 
-      <style>
-        div.album{
-          padding-top: 8rem!important;
-        }
-      .frete-gratis {
-          position: fixed;
-          top: 56px!important;
-      }
-      </style>
-    
-     
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Loja Virtual</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a id="menu-todos" class="nav-link link-menu active" aria-current="page" onclick="selecionarMenu(this)" href="#">Todos os produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'feminino')">Feminino</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'infantil')">Infantil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'masculino')">Masculino</a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <button type="button" class="d-flex me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-carrinho">
-              Ver Carrinho
-              <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
-            </button>
-          </div>
-          <form class="d-flex" role="search" onsubmit="pesquisarProduto(this); return false">
-            <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Search">
-            <button class="btn btn-success" type="submit">Pesquisar</button>
-           </form>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Gisely Oliveira">
+
+  <title>FastTrack - Compra de roupinhas</title>
+
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+  <!-- Barra de Navegação Principal -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Loja Virtual</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Itens do menu -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <img class="" src="assets/images/logo.png" width="105" alt="">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+          <!-- Barra de Navegação Secundária com Ícones -->
+          <nav class="navbar navbar-secondary navbar-expand-md navbar-light bg-secondary">
+            <div class="container-fluid">
+
+              <!-- Ícone de Login -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-box-arrow-in-right"></i> Login
+                </a>
+              </li>
+              <!-- Ícone de Fale Conosco -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-chat-dots"></i> Fale Conosco
+                </a>
+              </li>
+              <!-- Ícone do User-->
+              <div class="d-flex">
+                <a href="#" class="nav-link">
+                  <i class="bi bi-person"></i>
+                </a>
+              </div>
+
+              <li class="nav-item">
+                <a id="menu-todos" class="nav-link link-menu active" aria-current="page" onclick="selecionarMenu(this)"
+                  href="#">Todos os produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'feminino')">Feminino</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'infantil')">Infantil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'masculino')">Masculino</a>
+              </li>
+        </ul>
+        <div class="d-flex">
+          <button type="button" class="d-flex me-2 btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#modal-carrinho">
+            <i class="bi bi-cart ms-1"></i> <!-- Ícone de carrinho do Bootstrap -->
+            <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
+          </button>
         </div>
+        <form class="d-flex" role="search" onsubmit="pesquisarProduto(this); return false">
+          <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui"
+            aria-label="Search">
+          <button class="btn btn-success" type="submit">Pesquisar</button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <main>
     <div class="row">
       <div class="container">
         <div class="col">
           <div class="frete-gratis">
-            <img class="" src="assets/images/barrasuperior.gif" width="102%" alt="">
+            <img class="d-none d-md-block d-lg-block d-xl-block" src="assets/images/barrasuperior.gif" width="100%"
+              alt="">
           </div>
         </div>
       </div>
@@ -75,16 +100,106 @@
     </div>
 
   </main>
-  <footer class="text-body-secondary py-5">
-    <div class="container">
-      <p class="float-end mb-1">
-        <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1">2023 &copy Loja on Line</p>
-      
+  <!-- Rodapé -->
+
+  <footer id="footer">
+    <div class="footer-content">
+      <!-- Footer Menu - Ajuda e Suporte -->
+      <ul class="list-unstyled footer-info-items">
+        <p class="footer-menu-heading">Ajuda e Suporte</p>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Política de Frete
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Devoluções
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Rastrear
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Guia de Tamanhos
+          </a>
+        </li>
+      </ul>
+
+      <!-- Footer Menu - Atendimento ao Cliente -->
+      <ul class="list-unstyled footer-info-items">
+        <p class="footer-menu-heading">
+          Atendimento ao Cliente
+        </p>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Contate-nos
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Método de Pagamento
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Bonificação
+          </a>
+        </li>
+      </ul>
+
+      <!-- Footer Menu - Privacidade -->
+      <ul class="list-unstyled footer-info-items">
+        <p class="footer-menu-heading">Privacidade</p>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Política
+            de Privacidade
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Cookies
+          </a>
+        </li>
+        <li class="footer-info-item">
+          <a href="#"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+            Sobre Anúncios
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
-  
+
+  <footer class="text-body-secondary py-5">
+    <div class="container">
+      <div class="footer-left">
+        <p class="float-end mb-1">©2009-2023 Todos os direitos reservados - Loja on Line</p>
+        <div class="footer-info">
+          <ul class="footer-info-items footer-menu">
+
+          </ul>
+        </div>
+      </div>
+      <p class="float-end mb-1"><a href="#">Back to top</a></p>
+    </div>
+  </footer>
+
+
+
+
   <!-- Modal -->
   <div class="modal modal-lg" tabindex="-1" id="modal-carrinho">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -109,4 +224,5 @@
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/produtos.js"></script>
 </body>
+
 </html>

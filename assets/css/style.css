@@ -1,0 +1,103 @@
+    div.album {
+        padding-top: 8rem !important;
+    }
+
+    .frete-gratis {
+        position: fixed;
+        top: 90px !important;
+        width: 100%;
+    }
+
+    body {
+        padding-top: 89px;
+    }
+
+    .logo.img {
+        max-width: 50px;
+    }
+
+    /* Custom CSS para a barra menu */
+
+
+
+
+    /* Estilos para o hover dos links na barra de navegação */
+    .navbar-pink .navbar-nav .nav-link:hover {
+        color: #f8f9fa;
+        /* Cor do texto branco ao passar o mouse (pode ser alterado) */
+    }
+
+    .navbar .bi {
+        font-size: 2rem;
+        vertical-align: middle;
+    }
+
+    /* Estilo para separar visualmente as barras de navegação */
+    .navbar-secondary {
+        display: block;
+        padding: px auto;
+        margin: 49px auto;
+        min-height: 25px;
+    }
+
+
+    .navbar-secondary .navbar-nav {
+        gap: 1rem;
+        /* Espaçamento entre os itens do menu */
+    }
+
+    .navbar-secondary .navbar-nav .nav-link {
+        color: #0c0d0f;
+        /* Cor do texto dos links */
+        font-size: 1rem;
+        /* Tamanho da fonte dos links */
+    }
+
+    /* Estilizando os ícones da barra secundária */
+    .navbar-secondary .bi {
+        font-size: 1.5rem;
+        vertical-align: middle;
+    }
+
+    /* Estilo para o rodapé */
+    footer.text-body-secondary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-left p {
+        margin-right: 10px;
+        /* Ajuste a margem conforme necessário */
+    }
+
+
+    /* Novo estilo para ajustar os elementos do footer */
+    #footer {
+        position: relative;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+
+
+    #footer .footer-content {
+        display: flex;
+        justify-content: space-around;
+        /* Centraliza os elementos horizontalmente */
+        align-items: center;
+        /* Alinha os elementos verticalmente */
+    }
+
+    /* Novo estilo para destacar a palavra "Ajuda e Suporte" */
+    .footer-menu-heading {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #0a32e4;
+        margin-bottom: 10px;
+    }

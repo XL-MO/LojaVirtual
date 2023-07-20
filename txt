@@ -1,2 +1,6 @@
 https://github.com/daneneutzling/basic_javascript/blob/main/img/logo2.jpg
 
+<button type="button" class="d-flex me-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-carrinho">
+            Ver Carrinho
+            <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
+          </button>
