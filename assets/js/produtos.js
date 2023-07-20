@@ -1,3 +1,8 @@
+function formataPreco(preco) {
+    var intl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    return intl.format(preco);
+}
+
 /**
  *  Função para selecionar um item de menu
  *  e carregar os cards correspondentes
@@ -34,7 +39,7 @@ function criarCard(produto) {
     card += `<img src=\"assets/images/produtos/${produto.categoria}/${produto.id}.jpg\" class=\"card-img-top\">`;
     card += "<div class=\"card-body text-center\">";
     card += `<p class=\"card-text\">${produto.nome}</p>`;
-    card += `<p class=\"card-text\"> R$ ${produto.preco}</p>`;
+    card += `<p class=\"card-text\"> ${formataPreco(produto.preco)}</p>`;
     card += "<div class=\"align-items-center\">";
     card += `<button onclick=\"adicionarCarrinho(${produto.id})\" type=\"button\" class=\"btn btn-primary\">Adicionar</button>`;
     card += "</div>";
@@ -50,7 +55,7 @@ function criarCardCarrinho(item) {
     card += `<img src=\"assets/images/produtos/${item.produto.categoria}/${item.produto.id}.jpg\" class=\"card-img-top\">`;
     card += "<div class=\"card-body text-center\">";
     card += `<p class=\"card-text\">${item.produto.nome}</p>`;
-    card += `<p class=\"card-text\"> R$ ${item.produto.preco}</p>`;
+    card += `<p class=\"card-text\"> ${formataPreco(item.produto.preco)}</p>`;
     card += `<p class=\"card-text\"> Quantidade: ${item.quantidade}</p>`;
     card += "<div class=\"align-items-center\">";
     card += `<button onclick=\"removerCarrinho(${item.produto.id})\" type=\"button\" class=\"btn btn-danger btn-sm\">Remover</button>`;
@@ -77,12 +82,17 @@ function selecionarMenu(el, categoria) {
 function carregarCarrinho() {
     var elementopai = document.getElementById("produtos-carrinho");
     elementopai.innerHTML = "";
+    var total = 0;
     for (var i = 0; i < itemsCarrinho.length; i++) {
         var item = itemsCarrinho[i];
         elementopai.innerHTML += criarCardCarrinho(item);
+        total += item.produto.preco * item.quantidade;
     }
     var numItensCarrinho = document.getElementById("num-itens-carrinho");
     numItensCarrinho.innerHTML = itemsCarrinho.length;
+
+    var numItensCarrinho = document.querySelector("#valor-total-carrinho");
+    numItensCarrinho.innerHTML = formataPreco(total);
 }
 
 function carregarCardsPesquisa(produtosEncontrados) {
@@ -163,8 +173,6 @@ function removerCarrinho(id) {
                 } else {
                     itemsCarrinho.splice(i, 1);
                 }
-
-
                 break;
             }
         }
@@ -198,38 +206,29 @@ function pesquisarProduto(form) {
 
 
 }
-
-
-
-
 window.setTimeout(buscaProdutos, 1000);    //aguarda 1 segundo para buscar produtos
 
+// Exemplo de JavaScript inicial para desabilitar envios de formulário se houver campos inválidos
+(function () {
+    'use strict'
+
+    window.addEventListener('load', function () {
+        // Busca todos os formulários aos quais queremos aplicar estilos personalizados de validação de Bootstrap  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation')
+
+        // Faz um loop sobre eles e evita submissão
+        Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    }, false)
+}())
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//teste Carrinho de compras/ finmalizar compras
 

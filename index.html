@@ -17,7 +17,7 @@
 
 <body>
     <!-- Barra de Navegação Principal -->
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <nav class="navbar navbar-primary navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container-fluid">
 
             <!-- Nome da Loja -->
@@ -62,36 +62,42 @@
     </nav>
 
     <!-- Barra de Navegação Secundária com Itens -->
-    <nav class="navbar navbar-secondary navbar-expand-md navbar-light bg-secondary">
+    <nav class="navbar navbar-secondary navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-
-            <!-- Itens do menu secundário -->
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <!-- Todos os Produtos -->
-                <li class="nav-item">
-                    <a id="menu-todos" class="nav-link link-menu active" aria-current="page"
-                        onclick="selecionarMenu(this)" href="#">Todos os produtos</a>
-                </li>
-
-                <!-- Categorias -->
-                <li class="nav-item">
-                    <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'feminino')">Feminino</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'infantil')">Infantil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'masculino')">Masculino</a>
-                </li>
-            </ul>
-
-            <!-- Barra de Pesquisa -->
-            <form class="d-flex" role="search" onsubmit="pesquisarProduto(this); return false">
-                <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui"
-                    aria-label="Search">
-                <button class="btn btn-success" type="submit">Pesquisar</button>
-            </form>
-
+            <a class="navbar-brand" href="#">Loja Virtual</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a id="menu-todos" class="nav-link link-menu active" aria-current="page"
+                            onclick="selecionarMenu(this)" href="#">Todos os produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'feminino')">Feminino</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'infantil')">Infantil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-menu" href="#" onclick="selecionarMenu(this, 'masculino')">Masculino</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button type="button" class="d-flex me-2 btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modal-carrinho">
+                        Ver Carrinho
+                        <span class="badge text-bg-secondary" id="num-itens-carrinho"></span>
+                    </button>
+                </div>
+                <form class="d-flex" role="search" onsubmit="pesquisarProduto(this)">
+                    <input id="pesquisa-produto" class="form-control me-2" type="search" placeholder="Pesquise aqui"
+                        aria-label="Search">
+                    <button class="btn btn-success" type="submit">Pesquisar</button>
+                </form>
+            </div>
         </div>
     </nav>
 
@@ -117,6 +123,11 @@
 
     <footer id="footer">
         <div class="footer-content">
+            <img src="assets/images/cartoes.png">
+         
+
+
+
             <!-- Footer Menu - Ajuda e Suporte -->
             <ul class="list-unstyled footer-info-items">
                 <p class="footer-menu-heading">Ajuda e Suporte</p>
@@ -148,9 +159,13 @@
 
             <!-- Footer Menu - Atendimento ao Cliente -->
             <ul class="list-unstyled footer-info-items">
-                <p class="footer-menu-heading">
-                    Atendimento ao Cliente
-                </p>
+                <p class="footer-menu-heading">Atendimento ao Cliente</p>
+                <li class="footer-info-item">
+                    <a href="#"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                        Sua Conta
+                    </a>
+                </li>
                 <li class="footer-info-item">
                     <a href="#"
                         class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
@@ -219,28 +234,262 @@
                 </div>
                 <div class="modal-body">
                     <p>Resumo da Compra</p>
+                    <!-- Conteúdo do carrinho -->
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="produtos-carrinho"></div>
                     <div class="total-carrinho">
-                        <p>Total: R$ <span id="valor-total-carrinho">0.00</span></p>
+                        <p>Total: <span id="valor-total-carrinho">0.00</span></p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar comprando</button>
-                    <button type="button" class="btn btn-primary">Compre Agora</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar
+                        comprando</button>
+                    <!-- Botão "Compre Agora" vinculado ao "Modal de Finalizar Pagamento" -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modal-finalizar-pagamento">
+                        Compre Agora
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+
+
+
+
+
+    <!-- Modal Finalizar Pagamento -->
+    <div class="modal" tabindex="-1" id="modal-finalizar-pagamento">
+        <div class="modal-dialog modal-lg d-flex align-items-center">
+            <div class="modal-content justify-content-center">
+                <!-- Conteúdo do modal de finalizar pagamento -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalize seu Pagamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <!-- Conteúdo do modal de finalizar pagamento -->
+
+
+
+                    <div class="container">
+                        <div class="py-5 text-center">
+                            <img class="d-block mx-auto mb-4" src="./assets/images/logo.png" alt="" width="172"
+                                height="72">
+                            <h2>Finalize seu pagamento</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Nome</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Mobile Number</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Pincode</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Pincode">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Flat / House No. / Floor / Building</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Flat">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Colony / Street / Locality</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Colony">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Landmark</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Colony">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Landmark</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        placeholder="Colony">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <textarea rows="4" cols="50" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <!-- new customer end -->
+                        </div><!-- step 1 end div tag -->
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-primary next-step btn-theme">Next</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2"> <!-- step 2 start -->
+                        <div class="step2">
+                            <div class="col-sm-4">
+                                <label class="radio-inline"><input type="radio" name="optradio">Credit
+                                    card</label>
+                                <div class="credit_card">
+                                    <ul class="payments_ul">
+                                        <li>
+                                            <img src="http://localhost/nukkad-shop/public/assets/img/credit-card.png">
+                                        </li>
+                                        <li>
+                                            <img src="http://localhost/nukkad-shop/public/assets/img/mastercard.png">
+                                        </li>
+                                        <li>
+                                            <img src="http://localhost/nukkad-shop/public/assets/img/paypal.png">
+                                        </li>
+                                        <li>
+                                            <img src="http://localhost/nukkad-shop/public/assets/img/visa.png">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="name_of_card">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Name on card</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Name on card">
+                                    </div>
+                                </div>
+                                <div class="name_of_card">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Card number</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Card number">
+                                    </div>
+                                </div>
+                                <p>Expiration date</p>
+                                <div class="expir_date col-sm-3 p_rm">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>-- Select -- </option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="expir_date col-sm-5 p_rm">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>-- Year -- </option>
+                                            <option>2006</option>
+                                            <option>2006</option>
+                                            <option>2007</option>
+                                            <option>2008</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline"><input type="radio" name="optradio">Debit
+                                    card</label>
+                                <div class="debit_card">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>-- Debit card -- </option>
+                                            <option>All Visa/MasterCard Debit Card</option>
+                                            <option>All Rupay Debit Cards</option>
+                                            <option>All SBI Maestro Debit Cards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline"><input type="radio" name="optradio">Net
+                                    Banking</label>
+                                <div class="net_banking">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>-- Net Banking -- </option>
+                                            <option>Allahabad Bank</option>
+                                            <option>Andhra Bank</option>
+                                            <option>Airtel Payments Bank</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step btn-theme">Previous</button>
+                            </li>
+                            <li><button type="button" class="btn btn-primary next-step btn-theme">Next</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- step 2 end -->
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <div class="col-sm-4">
+                            <h5><strong>Shipping address</strong></h5>
+                            <p>Name: John Albert</p>
+                            <p>Address: #33, Kaveri nadhi st, </p>
+                            <p>KK nagar, </p>
+                            <p> Madurai - 02</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5><strong>Payment method </strong></h5>
+                            <p>Net Banking: Allahabad Bank </p>
+                        </div>
+                        <div class="col-sm-5">
+
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+                </section>
+            </div>
+        </div>
+
+
+
+
+        </form>
+    </div>
+    </div>
+
+
+    </ul>
+    </footer>
+
+
+
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/produtos.js"></script>
-    <script>
-        window.setTimeout(buscaProdutos, 1000); // Aguarda 1 segundo para buscar produtos
-        carregarCarrinho(); // Carrega o carrinho no carregamento da página
-    </script>
-</body>
 
-</html>
+
+
+
+
+
+
+
+
 </body>
 
 </html>
