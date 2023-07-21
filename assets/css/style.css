@@ -1,86 +1,93 @@
-    div.album {
-        padding-top: 8rem !important;
-    }
-
-    .frete-gratis {
-        position: fixed;
-        top: 88px !important;
-        width: 100%;
-        z-index: 10000;
-    }
-
-    body {
-        padding-top: 89px;
-    }
-
-    .logo.img {
-        max-width: 50px;
-    }
-
-    /* Custom CSS para a barra menu */
+/* form */
+form label.form-label {
+    margin-top: 20px;
+    font-weight: 500;
+}
 
 
+div.album {
+    padding-top: 8rem !important;
+}
 
+.frete-gratis {
+    position: fixed;
+    top: 88px !important;
+    width: 100%;
+    z-index: 1050;
+}
 
-    /* Estilos para o hover dos links na barra de navegação */
-    .navbar-nav .nav-link:hover {
-        color: #f8f9fa;
-        /* Cor do texto branco ao passar o mouse (pode ser alterado) */
-    }
+body {
+    padding-top: 89px;
+}
 
-    .navbar .bi {
-        font-size: 2rem;
-        vertical-align: middle;
-    }
+.logo.img {
+    max-width: 50px;
+}
 
-    /* Estilo para separar visualmente as barras de navegação */
-    .navbar-secondary {
-        top: 136px;
-    }
-
-
-    /* Estilo para o rodapé */
-    footer.text-body-secondary {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .footer-left {
-        display: flex;
-        align-items: center;
-    }
-
-    .footer-left p {
-        margin-right: 10px;
-        /* Ajuste a margem conforme necessário */
-    }
-
-
-    /* Novo estilo para ajustar os elementos do footer */
-    #footer {
-        position: relative;
-        width: 95%;
-        margin: 0 auto;
-    }
+/* Custom CSS para a barra menu */
 
 
 
-    #footer .footer-content {
-        background-color: #e7e7e7;
-        display: flex;
-        justify-content: space-around;
-        /* Centraliza os elementos horizontalmente */
-        align-items: center;
-        /* Alinha os elementos verticalmente */
-    }
 
-    /* Novo estilo para destacar a palavra "Ajuda e Suporte" */
-    .footer-menu-heading {
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: #0a32e4;
-        margin-bottom: 10px;
-    }
+/* Estilos para o hover dos links na barra de navegação */
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+    /* Cor do texto branco ao passar o mouse (pode ser alterado) */
+}
 
-    /* testes de cores do carrinho de compras*/
+.navbar .bi {
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+/* Estilo para separar visualmente as barras de navegação */
+.navbar-secondary {
+    top: 136px;
+}
+
+
+/* Estilo para o rodapé */
+footer.text-body-secondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left p {
+    margin-right: 10px;
+    /* Ajuste a margem conforme necessário */
+}
+
+
+/* Novo estilo para ajustar os elementos do footer */
+#footer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+#footer .footer-content {
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: space-around;
+    /* Centraliza os elementos horizontalmente */
+    align-items: center;
+    /* Alinha os elementos verticalmente */
+}
+
+/* Novo estilo para destacar a palavra "Ajuda e Suporte" */
+.footer-menu-heading {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0a32e4;
+    margin-bottom: 10px;
+}
+
+/* testes de cores do carrinho de compras*/

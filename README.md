@@ -40,3 +40,6 @@ A página é responsiva e usa a biblioteca Bootstrap para ajudar a criar um layo
 O JavaScript é usado para criar os elementos dinâmicos na página, realizar pesquisas, adicionar e remover itens do carrinho e realizar outras interações do usuário.
 
 Em resumo, o código apresentado representa uma loja online com recursos básicos de exibição e busca de produtos, além de funcionalidades de carrinho de compras e informações de rodapé. Com mais detalhes de estilo e imagens, a página estará pronta para uso e apresentação ao usuário.
+
+
+Your site is live at https://xl-mo.github.io/LojaVirtual/

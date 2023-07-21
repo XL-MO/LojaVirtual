@@ -206,29 +206,7 @@ function pesquisarProduto(form) {
 
 
 }
+
 window.setTimeout(buscaProdutos, 1000);    //aguarda 1 segundo para buscar produtos
 
-// Exemplo de JavaScript inicial para desabilitar envios de formulário se houver campos inválidos
-(function () {
-    'use strict'
-
-    window.addEventListener('load', function () {
-        // Busca todos os formulários aos quais queremos aplicar estilos personalizados de validação de Bootstrap  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation')
-
-        // Faz um loop sobre eles e evita submissão
-        Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-        })
-    }, false)
-}())
-
-
-//teste Carrinho de compras/ finmalizar compras
 
