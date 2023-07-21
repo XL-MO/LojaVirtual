@@ -88,11 +88,14 @@ function carregarCarrinho() {
         elementopai.innerHTML += criarCardCarrinho(item);
         total += item.produto.preco * item.quantidade;
     }
-    var numItensCarrinho = document.getElementById("num-itens-carrinho");
-    numItensCarrinho.innerHTML = itemsCarrinho.length;
+
+    var elsNumItemsCarrinho = Array.from(document.querySelectorAll(".num-itens-carrinho"));
+    elsNumItemsCarrinho.forEach(el => el.innerHTML = itemsCarrinho.length);
 
     var numItensCarrinho = document.querySelector("#valor-total-carrinho");
     numItensCarrinho.innerHTML = formataPreco(total);
+
+    carregaItensCarrinhoCompra();
 }
 
 function carregarCardsPesquisa(produtosEncontrados) {
@@ -209,4 +212,45 @@ function pesquisarProduto(form) {
 
 window.setTimeout(buscaProdutos, 1000);    //aguarda 1 segundo para buscar produtos
 
+/**
+ * Cria item da lista de produtos na finalização da compra
+ * @param {object} produto 
+ * @returns {str}
+ */
+function criaItemCarrinhoCompra(produto, quantidade, precoTotal) {
+    var linha = "<li class=\"list-group-item d-flex justify-content-between lh-sm\">";
+    linha += "<div>";
+    linha += `<h6 class=\"my-0\" style=\"font-weight:normal\">${produto.nome} (${quantidade})</h6>`;
+    linha += "</div>";
+    linha += `<span class=\"text-muted\">${formataPreco(precoTotal)}</span>`;
+    linha += "</li>";
+    return linha;
+}
 
+function criaPrecoTotalCarrinhoCompra(precoTotal) {
+    var linha = "<li class=\"list-group-item d-flex justify-content-between lh-sm\">";
+    linha += "<div>";
+    linha += `<h6 class=\"my-0\">Total</h6>`;
+    linha += "</div>";
+    linha += `<span class=\"text-muted\">${formataPreco(precoTotal)}</span>`;
+    linha += "</li>";
+    return linha;
+}
+
+function carregaItensCarrinhoCompra() {
+    var elementoPai = document.querySelector("#itens-carrinho-compra");
+    elementoPai.innerHTML = "";
+    var precoTotal = 0;
+    for (var i = 0; i < itemsCarrinho.length; i++) {
+        var item = itemsCarrinho[i];
+        var precoTotalItem = item.produto.preco * item.quantidade;
+        elementoPai.innerHTML += criaItemCarrinhoCompra(item.produto, item.quantidade, precoTotalItem);
+        precoTotal += precoTotalItem;
+    }
+    elementoPai.innerHTML += criaPrecoTotalCarrinhoCompra(precoTotal);
+}
+
+
+// Carrossel
+
+$('#carouselExampleControls').carousel();
